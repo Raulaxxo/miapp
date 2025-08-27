@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-links-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-links
+  template:
+    metadata:
+      labels:
+        app: nginx-links
+    spec:
+      containers:
+      - name: nginx-links
+        image: raulaxxo/nginx-links
+        ports:
+        - containerPort: 80
