@@ -4,21 +4,21 @@
 
 Este es un repositorio de prueba para desplegar un servicio en Kubernetes usando Minikube.
 
-## Estructura
+## Estructura de carpetas
 
-- `links/deployment.yml`: Deployment de ejemplo usando la imagen `gcr.io/google-containers/echoserver:2.0`.
-- `links/service.yml`: Service tipo NodePort para exponer el deployment.
+- `nginx/deployment.yml`: Deployment de ejemplo usando la imagen `gcr.io/google-containers/echoserver:2.0`.
+- `nginx/service.yml`: Service tipo NodePort para exponer el deployment.
 
 ## Despliegue rápido
 
 1. Aplica los manifiestos:
    ```bash
-   kubectl apply -f links/deployment.yml -n links
-   kubectl apply -f links/service.yml -n links
+   kubectl apply -f nginx/deployment.yml -n nginx
+   kubectl apply -f nginx/service.yml -n nginx
    ```
 2. Accede al servicio:
    ```bash
-   minikube service nginx-service -n links --url
+   minikube service nginx-service -n nginx --url
    ```
 
 Esto mostrará la URL para acceder al servicio, donde podrás ver el nombre del pod que responde a cada petición.
