@@ -13,7 +13,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: echoserver
-        image: gcr.io/google-containers/echoserver:2.0
+      - name: hello
+        image: nginxdemos/hello
         ports:
         - containerPort: 8080
