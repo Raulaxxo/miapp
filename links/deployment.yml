@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-links-deployment
+  name: nginx-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-links
+      app: nginx
   template:
     metadata:
       labels:
-        app: nginx-links
+        app: nginx
     spec:
       containers:
-      - name: nginx-links
-        image: raulaxxo/nginx-links
+      - name: echoserver
+        image: gcr.io/google-containers/echoserver:2.0
         ports:
-        - containerPort: 80
+        - containerPort: 8080
